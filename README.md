@@ -159,6 +159,12 @@ In our code, Albumentations is used for data augmentation during the training ph
 
 These transformations collectively introduce various variations and distortions to the training images, helping the model learn robust and generalized representations.
 
+## Results 
+
+EPOCH: 77
+Loss=0.7087705731391907 Batch_id=97 Accuracy=79.77: 100%|██████████| 98/98 [00:13<00:00,  7.49it/s]
+Test set: Average loss: 0.4410, Accuracy: 8527/10000 (85.27%)
+
 
 
 
