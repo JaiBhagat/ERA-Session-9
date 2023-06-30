@@ -37,6 +37,7 @@ Dilated convolutions efficiently capture spatial dependencies over large areas, 
 
 Incorporating depthwise separable convolutions and dilated kernels in the given architecture allows for an efficient and effective model that meets the specified objectives within the desired parameter limit.
 
+## RF Calculation for the Network
 
 To calculate the receptive field (RF) of the model, we need to determine the effective receptive field of each layer and track how it changes through the network.
 
