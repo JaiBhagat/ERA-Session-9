@@ -114,4 +114,51 @@ Dilated Kernels:
 
 Both depthwise separable convolution and dilated kernels enhance the model's ability to capture spatial information and context, allowing for more effective and efficient feature learning.
 
+## Albumentations 
+Albumentations is an open-source library for image augmentation in machine learning and computer vision tasks. It provides a wide range of image transformation techniques that can be applied to enhance the training data and improve the model's generalization capabilities.
+
+In our code, Albumentations is used for data augmentation during the training phase. The `train_transforms_albu` object defines a sequence of transformations to be applied to the training images. Let's discuss each transformation:
+
+- Normalize:
+  - Applies normalization to the image using specified mean and standard deviation values.
+  - Mean: (0.4914, 0.4822, 0.4465)
+  - Standard Deviation: (0.2023, 0.1994, 0.2010)
+
+- HorizontalFlip:
+  - Flips the image horizontally with a probability of 0.5.
+  - This transformation helps the model learn to generalize and handle mirrored or horizontally flipped objects.
+
+- RandomBrightnessContrast:
+  - Randomly adjusts the brightness and contrast of the image.
+  - Probability: 0.2
+  - This variation in brightness and contrast helps the model become more robust to different lighting conditions.
+
+- RandomContrast:
+  - Randomly adjusts the contrast of the image.
+  - Limit: 0.2
+  - This transformation further enhances the contrast of the images.
+
+- ShiftScaleRotate:
+  - Randomly applies a combination of translation, scaling, and rotation to the image.
+  - Shift Limit: 0.0625 (fraction of the image size)
+  - Scale Limit: 0.1 (fraction of the image size)
+  - Rotate Limit: 45 degrees
+  - Probability: 0.2
+  - This transformation simulates variations in the viewpoint or perspective of the objects in the images.
+
+- CoarseDropout:
+  - Randomly masks out rectangular regions of the image, creating dropout-like effects.
+  - Max Holes: 1
+  - Max Height: 16 pixels
+  - Fill Value: (0.4914, 0.4822, 0.4465) (using the mean values of the dataset)
+  - Mask Fill Value: None
+  - This transformation helps the model become more robust to missing or occluded parts of the images.
+
+- ToTensorV2:
+  - Converts the image and its corresponding labels to PyTorch tensors.
+
+These transformations collectively introduce various variations and distortions to the training images, helping the model learn robust and generalized representations.
+
+
+
 
